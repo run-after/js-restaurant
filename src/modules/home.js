@@ -1,6 +1,11 @@
-const Home = (() => {
+const Home = () => {
 
   const container = document.getElementById("container");
+
+  //Checks if has main node and if so, removes it
+  if(container.childNodes[1]){
+    container.removeChild(container.childNodes[1]);
+  }
 
   const main = document.createElement("div");
   main.classList.add("main");
@@ -21,7 +26,7 @@ const Home = (() => {
   main.appendChild(copy);
 
   container.appendChild(main);
-
-})();
-
-export {Home};
+  
+};
+Home();
+export default {Home};

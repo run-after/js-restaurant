@@ -1,4 +1,4 @@
-const Menu = (() => {
+const Menu = () => {
 
   const createItem = (name, amount) => {
     let menuItem = document.createElement("div");
@@ -15,6 +15,11 @@ const Menu = (() => {
   };
 
   const container = document.getElementById("container");
+  
+  //Checks if has main node and if so, removes it
+  if(container.childNodes[1]){
+    container.removeChild(container.childNodes[1]);
+  }
 
   const main = document.createElement("div");
   main.classList.add("main");
@@ -38,6 +43,6 @@ const Menu = (() => {
 
   createItem("Beer", "$4");
 
-})();
+};
 
-export {Menu};
+export default {Menu};
